@@ -1,16 +1,12 @@
-import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { logIn, logOut } from './features/userSlice'
+import React from 'react'
+import { NavBar } from './views/NavBar/NavBar'
 
 function App() {
-  const user = useSelector((state) => state.user.value)
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(logIn({ usuario: 'xx', password: 'asd' }))
-  }, [])
-
-  return <h1 className="text-3xl font-bold underline">{user.usuario}</h1>
+  return (
+    <div className="App">
+      <NavBar />
+    </div>
+  )
 }
 
 export default App
