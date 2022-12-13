@@ -7,9 +7,7 @@ export const NavBar = () => {
   const user = useSelector((state) => state.user.value);
   const auth = useSelector((state) => state.user.auth);
 const dispatch = useDispatch()
-  useEffect(() => {
-    console.log(user, auth);
-  }, []);
+
   return (
     <div className="bg-blue-700 p-2 flex content-between">
       <div className="text-white text-2xl w-2/3">Muro Interactivo</div>

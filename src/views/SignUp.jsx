@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { setUser } from "../features/userSlice";
 import { addUser } from "../services";
 
 export const SignUp = () => {
   const [user, setUserState] = useState({});
   const dispatch = useDispatch();
-
+  const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -19,6 +20,7 @@ export const SignUp = () => {
 
       dispatch(setUser(userReq));
       alert("Usuario Creado");
+      navigate("/")
     } catch (error) {
       alert(error);
     }

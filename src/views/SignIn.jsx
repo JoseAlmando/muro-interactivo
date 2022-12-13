@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { redirect } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import { setUser } from "../features/userSlice";
 import { getUser } from "../services";
 
 export const SignIn = () => {
   const [user, setUserState] = useState({});
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +15,7 @@ export const SignIn = () => {
       const userReq = await getUser(user.usuario, user.clave);
 
       dispatch(setUser(userReq));
-      return redirect("/")
+      navigate("/")
     } catch (error) {
       alert(error);
     }

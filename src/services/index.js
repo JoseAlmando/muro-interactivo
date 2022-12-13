@@ -15,7 +15,7 @@ const getUser = async (usuario, clave) => {
     }))[0]
   })
 
-  if (r === undefined) throw  new Error('Usuario inexistente.')
+  if (r === undefined) throw new Error('Usuario inexistente.')
 
   return r
 }
@@ -40,7 +40,23 @@ const addUser = async (usuario, clave, nombre, apellido) => {
     await addDoc(collection(db, 'usuarios'), user)
     return await getUser(usuario, clave)
   }
-  throw new Error('Usuario existe.');
+  throw new Error('Usuario existe.')
 }
 
-export { getUser, addUser }
+const addPost = async (usuario, title, text) => {
+  const post = { usuario, title, text }
+  const r = await addDoc(collection(db, 'posts'), post)
+}
+
+const getPost = async () => {
+  const q = query(collection(db, 'posts'))
+
+  return await getDocs(q).then((querySnapshot) => {
+    return querySnapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }))
+  })
+}
+
+export { getUser, addUser, getPost, addPost }

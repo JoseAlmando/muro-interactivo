@@ -69,3 +69,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 "# muro-interactivo" 
+
+### IMAGES
+
+SIN AUTENTICAR
+![NO LOGIN](./imgs/no-login.png)
+
+AUTENTICADO
+![YE LOGIN](./imgs/ye-login.png)
+
+LOGIN FORM
+![LOGIN FORM](./imgs/login.png)
+
+REGISTER FORM
+![SIGNUP FORM](./imgs/signup.png)
